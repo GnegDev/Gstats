@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gnegdev.gstats.AppController">
+   <children>
+      <BorderPane>
+         <left>
+            <Label text="Gstats" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+            </Label>
+         </left>
+         <right>
+            <Button mnemonicParsing="false" onAction="#showInfo" text="Info" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <Separator prefWidth="200.0" />
+      <TextField fx:id="separatorInput" promptText="Separator" />
+      <TextArea fx:id="arrayInput" promptText="Number array" VBox.vgrow="ALWAYS" />
+      <HBox spacing="10.0">
+         <children>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#calculateArray" text="Calculate" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <HBox spacing="10.0">
+         <children>
+            <ComboBox fx:id="meanSelector" onAction="#showMean" promptText="Select mean" />
+            <TextField fx:id="meanOutput" editable="false" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <GridPane hgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints percentHeight="0.0" vgrow="SOMETIMES" />
+          <RowConstraints percentHeight="0.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints percentHeight="0.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="minOutput" editable="false" GridPane.rowIndex="2" />
+            <TextField fx:id="maxOutput" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="sumOutput" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="Minimal value" GridPane.rowIndex="1" />
+            <Label text="Maximum value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Sum" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>
